@@ -1,0 +1,81 @@
+/* Reseta margens e padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #333;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Título do jogo */
+h1 {
+  margin-top: 20px;
+}
+
+/* Container do tabuleiro */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 120px); /* Tamanho das colunas */
+  gap: 30px;                                /* Espaçamento entre as células */
+  margin: 20px auto;                       /* Centraliza horizontalmente */
+}
+
+/* Cada célula do tabuleiro */
+.cell {
+  background: #555;
+  width: 120px;
+  height: 120px;
+  font-size: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.cell:hover {
+  background: #666;
+}
+
+/* Texto de status (quem joga, vitória, empate) */
+.status {
+  margin: 20px;
+  font-size: 1.2em;
+}
+
+/* Botão de reiniciar */
+.reset-btn {
+  background: #0c0c0c;
+  color: #ee0303;
+  border: none;
+  padding: 20px 40px;
+  cursor: pointer;
+  font-size: 4em;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.reset-btn:hover {
+  background: #f8f8f7;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+  .game-board {
+    grid-template-columns: repeat(3, 80px); /* Reduz o tamanho em telas menores */
+  }
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2em;
+  }
+}
